@@ -6,12 +6,12 @@ import "./Convertor.css";
 const Convertor = () => {
   const apiurl = "https://api.coingecko.com/api/v3/exchange_rates";
   const defaultfirst = "Bitcoin";
-  const defaultsecond = "Ether";
+  const defaultsecond = "US Dollar";
   const [cryptolist, setcryptolist] = useState([]);
   const [inputvalue, setinputvalue] = useState("0");
   const [firstselect, setfirstselect] = useState(defaultfirst);
   const [secondselect, setsecondselect] = useState(defaultsecond);
-  const [result, setresult] = useState("0.000000");
+  const [result, setresult] = useState("0.000");
 
   useEffect(() => {
     fetchdata();
@@ -50,14 +50,14 @@ const Convertor = () => {
           title={
             <h1 className="icon">
               <BsCurrencyExchange />
-              Crypto Convertor
+              Cryptoly
             </h1>
           }
         >
           <Form>
             <Form.Item>
               <Input
-                placeholder="Enter Amount To Convert"
+                placeholder="Enter amount to convert"
                 allowClear="true"
                 bordered="true"
                 onChange={(e) => {
